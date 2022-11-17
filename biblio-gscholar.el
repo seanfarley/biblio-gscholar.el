@@ -34,6 +34,7 @@
 
 
 (defun biblio-gscholar--url (query)
+  "Create a Google Scholar url to look up QUERY."
   (let* ((url-request-method "GET")
          (system-time-locale "C")
          ;; Fabricate a cookie with a random ID that expires in an hour.
@@ -64,6 +65,7 @@
 
 
 (defun biblio-gscholar--parse-search-results ()
+  "Extract search results from Google Scholar response."
   (let* ((titles (gscholar-bibtex-google-scholar-titles (buffer-string)))
          (author-lists (mapcar (lambda (sub) (split-string
                                          (car (split-string
@@ -81,11 +83,14 @@
                           (bibtex . ,bibtex-content)))))
 
 (defun biblio-gscholar--forward-bibtext (metadata forward-to)
+  "Forward BibTeX for Google Scholar entry METADATA to FORWARD-TO."
   (funcall forward-to (biblio-format-bibtex (alist-get 'bibtex metadata))))
 
 ;;;###autoload
 (defun biblio-gscholar-backend (command &optional arg &rest more)
-  "A Google Scholar backend for biblio.el"
+  "A Google Scholar backend for `biblio'.
+
+COMMAND, ARG, MORE: See `biblio-backends'."
   (pcase command
     (`name "Google Scholar")
     (`prompt "Google Scholar query: ")
