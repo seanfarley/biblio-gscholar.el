@@ -92,12 +92,12 @@
 
 COMMAND, ARG, MORE: See `biblio-backends'."
   (pcase command
-    (`name "Google Scholar")
-    (`prompt "Google Scholar query: ")
-    (`url (biblio-gscholar--url arg))
-    (`parse-buffer (biblio-gscholar--parse-search-results))
-    (`forward-bibtex (biblio-gscholar--forward-bibtext arg (car more)))
-    (`register (add-to-list 'biblio-backends #'biblio-gscholar-backend))))
+    ('name "Google Scholar")
+    ('prompt "Google Scholar query: ")
+    ('url (biblio-gscholar--url arg))
+    ('parse-buffer (biblio-gscholar--parse-search-results))
+    ('forward-bibtex (biblio-gscholar--forward-bibtext arg (car more)))
+    ('register (add-to-list 'biblio-backends #'biblio-gscholar-backend))))
 
 ;;;###autoload
 (add-hook 'biblio-init-hook #'biblio-gscholar-backend)
