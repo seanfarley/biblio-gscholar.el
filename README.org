@@ -1,0 +1,18 @@
+#+title: biblio-gscholar
+
+[[httsp://scholar.google.com][Google Scholar]] backend for [[https://github.com/cpitclaudel/biblio.el][biblio.el]]. This code comes entirely from [[https://github.com/nchodosh][Nathaniel
+Chodosh]]'s [[https://github.com/cpitclaudel/biblio.el/pull/25#issuecomment-463854680][pull request to biblio.el]].
+
+** Installation
+
+For doom users, simply add this to your =packages.el=
+
+#+begin_src
+(package! biblio-gscholar :recipe (:host github :repo "seanfarley/biblio-gscholar"))
+#+end_src
+
+
+** Usage
+
+Simply just use the regular =M-x biblio-lookup=. This packages automatically
+registers itself as a backend.
