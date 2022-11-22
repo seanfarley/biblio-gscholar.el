@@ -1,6 +1,6 @@
 ;;; biblio-gscholar.el --- Lookup and import bibliographic entries from Google Scholar -*- lexical-binding: t -*-
 
-;; Copyright (C) 2018
+;; Copyright (C) 2018 Nathaniel Chodosh
 
 ;; Author: Nathaniel Chodosh <nchodosh@gmail.com>
 ;; URL: http://github.com/cpitclaudel/biblio.el
